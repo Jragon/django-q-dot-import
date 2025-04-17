@@ -9,7 +9,6 @@ class DotImport():
             module_path, class_name = path.rsplit(".", 1)
             module = import_module(module_path)
             Reporter = getattr(module, class_name)
-            print(Reporter)
             self.Reporter = Reporter(**kwargs)
         except Exception as e:
             logger.exception(e, exc_info=True)
