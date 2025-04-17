@@ -1,10 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"] # Specifies build dependencies. setuptools is standard.
+build-backend = "setuptools.build_meta" # Tells tools like pip how to build the package.
+
 [project]
 name = "django-q-dot-import"
 version = "0.1.0"
-description = "Allow custom imported"
-authors = [{ name = "Rory", email = "rory@rory.com" }]
+description = "Allow custom imported error reporters for Django Q"
+authors = [
+    { name = "Rory", email = "rory@rory.com" }
+]
 requires-python = ">=3.8"
-
+readme = "README.md"
 
 [project.entry-points."djangoq.errorreporters"]
 dot_import = "django_q_dot_import.dot_import:DotImport"
